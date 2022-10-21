@@ -36,41 +36,39 @@ def intro(api_key):
 
 
 def func1(api_key):
-    with st.form("form1"):
-            st.subheader("1. Wyekstrahuj informacje z tekstu")
+    st.subheader("1. Wyekstrahuj informacje z tekstu")
 
-            opis_badania = st.text_input('Wprowadz opis badania: ',
-                                      value='',
-                                      help='')
-            engine = st.radio('Engine',
-                ('text-davinci-002', 'text-curie-001', 'text-babbage-001', 'text-ada-001'))
-            temp = st.slider('Temperature:', min_value=0., max_value=1., step=0.05)
-            max_len = st.slider('Max tokens:', min_value=0, max_value=4096 if 'davinci' in engine else 2048,
-                                step=8, value=1000)
-            if st.form_submit_button('Wyekstrahuj informacje'):
-                completion_kwargs = {
-                    "opis_badania2": (opis_badania,),
-                    "engine": engine,
-                    "temperature": temp,
-                    "max_tokens": max_len,
-                    "api_key": api_key
-                }
-                st.write('**Wyekstrahowane informacje**')
-                st.write(f"""---""")
-                with st.spinner(text='In progress'):
-                    report_text = process_prompt(completion_kwargs, "opis_badania2")
-                    report_text = report_text.replace('\n', '  \n')
-                    import json
-                    print('TU PATRZ: ',report_text, '\n')
-                    data = json.loads(report_text)
-                    # print(data)
-                    st.json(data)
-                    # st.write(report_text)
-                    st.success('Done')
-                # st.download_button(
-                #     label="Ściągnij wyekstrahowane dane w formacie:",
-                #     data=text_download,
-                #     file_name=f'wyekstrahowane_informacje.{}',
-                #     # mime="text/plain"
-                # )
+    opis_badania = st.text_input('Wprowadz opis badania: ',
+                              value='',
+                              help='')
+    engine = st.radio('Engine',
+        ('text-davinci-002', 'text-curie-001', 'text-babbage-001', 'text-ada-001'))
+    temp = st.slider('Temperature:', min_value=0., max_value=1., step=0.05)
+    max_len = st.slider('Max tokens:', min_value=0, max_value=4096 if 'davinci' in engine else 2048,
+                        step=8, value=1000)
+    if st.button('Wyekstrahuj informacje'):
+        completion_kwargs = {
+            "opis_badania2": (opis_badania,),
+            "engine": engine,
+            "temperature": temp,
+            "max_tokens": max_len,
+            "api_key": api_key
+        }
+        st.write('**Wyekstrahowane informacje**')
+        st.write(f"""---""")
+        with st.spinner(text='In progress'):
+            report_text = process_prompt(completion_kwargs, "opis_badania2")
+            report_text = report_text.replace('\n', '  \n')
+            import json
+            json_string = json.loads(report_text)
+            json_dump = json.dumps(json_string)
+            print(json_string)
+            st.json(json_string, expanded=True)
+            st.success('Done')
+        st.download_button(
+            label="Ściągnij wyekstrahowane dane w formacie JSON:",
+            data=json_dump,
+            file_name=f'wyekstrahowane_informacje.json',
+            mime="application/json"
+        )
 
