@@ -17,18 +17,16 @@ def intro(api_key):
 
     st.image("extr.jpeg", use_column_width=True, caption='.')
 
-
-
-
     st.write("---")
 
     st.write(f"""
     ### Disclaimer
- 
+    Dana aplikacja jest jedynie prototypem systemu wspomagającego pracę lekarza. 
+    Nie powinna być, na tym etapie, używana jako właściwe narzędzie prawidłowej ekstracji informacji z opisu badania.
     """)
 
     st.write('''
-    You can read about these models in the links provided:
+    Możesz przeczytać na temat tego modelu pod podanym linkiem:
     
     GPT-3:
     https://en.wikipedia.org/wiki/GPT-3
@@ -49,9 +47,9 @@ def func1(api_key):
             temp = st.slider('Temperature:', min_value=0., max_value=1., step=0.05)
             max_len = st.slider('Max tokens:', min_value=0, max_value=4096 if 'davinci' in engine else 2048,
                                 step=8, value=64)
-            if st.form_submit_button('Find the title'):
+            if st.form_submit_button('Wyekstrahuj informacje'):
                 completion_kwargs = {
-                    "opis_badania": (opis_badania,),
+                    "opis_badania3": (opis_badania,),
                     "engine": engine,
                     "temperature": temp,
                     "max_tokens": max_len,
@@ -60,7 +58,19 @@ def func1(api_key):
                 st.write('**Wyekstrahowane informacje**')
                 st.write(f"""---""")
                 with st.spinner(text='In progress'):
-                    report_text = process_prompt(completion_kwargs, "opis_badania")
-                    st.markdown(report_text)
+                    report_text = process_prompt(completion_kwargs, "opis_badania3")
+                    # report_text = report_text.replace('\n', '  \n')
+                    import json
+                    print('TU PATRZ: ',report_text, '\n')
+                    data = json.loads(report_text)
+                    # print(data)
+                    st.json(data)
+                    # st.write(report_text)
                     st.success('Done')
+                # st.download_button(
+                #     label="Ściągnij wyekstrahowane dane w formacie:",
+                #     data=text_download,
+                #     file_name=f'wyekstrahowane_informacje.{}',
+                #     # mime="text/plain"
+                # )
 

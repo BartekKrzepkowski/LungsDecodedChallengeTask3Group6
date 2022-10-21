@@ -18,7 +18,8 @@ class Code:
 
         # arguments to send the API
         kwargs = {}
-        prompt = defaultPrompt[topic].format(*completion_kwargs[topic])
+        prompt = defaultPrompt['opis_badania'] + defaultPrompt[topic].format(*completion_kwargs[topic])
+        # prompt =
         for kwarg in completion_kwargs:
             if kwarg not in ['api_key', topic]:
                 kwargs[kwarg] = completion_kwargs[kwarg]
