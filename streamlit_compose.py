@@ -46,7 +46,7 @@ def func1(api_key):
                 ('text-davinci-002', 'text-curie-001', 'text-babbage-001', 'text-ada-001'))
             temp = st.slider('Temperature:', min_value=0., max_value=1., step=0.05)
             max_len = st.slider('Max tokens:', min_value=0, max_value=4096 if 'davinci' in engine else 2048,
-                                step=8, value=64)
+                                step=8, value=1000)
             if st.form_submit_button('Wyekstrahuj informacje'):
                 completion_kwargs = {
                     "opis_badania2": (opis_badania,),
@@ -59,7 +59,7 @@ def func1(api_key):
                 st.write(f"""---""")
                 with st.spinner(text='In progress'):
                     report_text = process_prompt(completion_kwargs, "opis_badania2")
-                    # report_text = report_text.replace('\n', '  \n')
+                    report_text = report_text.replace('\n', '  \n')
                     import json
                     print('TU PATRZ: ',report_text, '\n')
                     data = json.loads(report_text)

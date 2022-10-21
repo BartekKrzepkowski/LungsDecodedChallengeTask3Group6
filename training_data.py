@@ -8,23 +8,23 @@ Duża masa w śródpiersiu przednim o wymiarze 32x20 mm o niejednorodnej densyjn
 
 Wyekstrahowane informacje:
 {
-"zagęszczenia miąższowe": "[nie]",
-"płyn": "[jamy opłucnowe, worek osierdziowy]",
-"węzły chłonne": "[powiększone]",
-"przerzuty": "[brak]",
-"rozedma": "[brak]",
+"zagęszczenia miąższowe": "nie",
+"płyn": "jamy opłucnowe, worek osierdziowy",
+"węzły chłonne": "powiększone",
+"przerzuty": "brak",
+"rozedma": "brak",
 "zmiany":
     {
     "1":{
-        "typ": "[masa]",
-        "ilość": "[1]",
-        "narząd": "[śródpiersie, płuco]",
-        "strona": "[prawa]",
-        "lokalizacja": "[górny płat]",
-        "segment": "[brak]",
-        "kształt": "[brak]",
-        "rozmiar": "[32x20 mm]",
-        "zwapnienia": "[brak]",
+        "typ": "masa",
+        "ilość": "1",
+        "narząd": "śródpiersie, płuco",
+        "strona": "prawa",
+        "lokalizacja": "górny płat",
+        "segment": "brak",
+        "kształt": "brak",
+        "rozmiar": "32x20 mm",
+        "zwapnienia": "brak"
         }
     }
 }
@@ -46,7 +46,7 @@ Wyekstrahowane informacje:
     "1":{
         "typ": "masa mięsnotkankowa",
         "narząd": "płuco",
-    "strona" : "prawa"
+        "strona" : "prawa",
         "lokalizacja": "wnęka",
         "rozmiar": "68x54",
         "zwapnienia": "",
@@ -101,41 +101,86 @@ Wyekstrahowane informacje:
 
 Przykład 4:
 Opis badania:
-W płaszczyźnie czołowej po podaniu środka kontrastującego na poziomie rozwidlenia tchawicy uwidoczniono masę miękkotkankową o wymiarach 68x54 mm o policyklicznych zarysach po stronie prawej przytchawiczo i we wnęce płuc z towarzyszącym powiększeniem węzłów chłonnych podostrogowych 18x11 mm oraz 13x9 mm.
+Masa miękkotkankowa o wym. 15x12 mm w śródpiersiu przednim o policyklicznych zarysach. Bez powiększenia węzłów chłonnych.
 
 Wyekstrahowane informacje:
 {
-"zagęszczenia miąższowe": "brak",
+"jakość wyniku": "brak",
+"badanie kontrolne": "nie",
+"zagęszczenia miąższowe": "nie",
 "płyn": "brak",
-"wezły chłonne": "powiększone",
+"węzły chłonne": "w normie",
 "przerzuty": "brak",
 "rozedma": "brak",
 "zmiany":
     {
     "1":{
-        "typ": "masa mięsnotkankowa",
+        "typ": "masa",
+        "ilość": "1",
+        "narząd": "śródpiersie",
+        "kształt": "policykliczny",
+        "rozmiar": "15x12",
+        "zwapnienia": "brak",
+        "cecha": "miękkotkankowa"
+        }
+    }
+}
+
+
+Przykład 5:
+Opis badania:
+W szczytach zmiany bliznowate z drobnymi rozstrzeniami oskrzeli, pośród nich dwa drobne guzki ze zwapnieniami w seg. 1 prawym o wym. ok 7x6mm i 7x5mm zmiana o podobnej morfologii mniejsza o wym. 4x3mm w szczycie płuca lewego, najpewniej zmiany pozapalne. Do kontroli za ok 12 miesięcy. Ślad niedodmy u podstawy płata dolnego płuca lewego.  Tchawica, oskrzela główne, segmentowe i płatowe bez cech zwężeń. Węzły chłonne śródpiersiowe ani we wnękach nie są ewidentnie powiększone. Jamy opłucnowe bez płynu. Podtorebkowe zwapnienie w prawym płacie wątroby. Pogłębiona kifoza i zmiany zwyrodnieniowe kręgosłupa piersiowego.
+
+Wyekstrahowane informacje:
+{
+"jakość wyniku": "brak",
+"badanie kontrolne": "12 miesięcy",
+"zagęszczenia miąższowe": "nie",
+"płyn": "brak",
+"wezły chłonne": "w normie",
+"przerzuty": "brak",
+"rozedma": "brak",
+"zmiany":
+    {
+    "1":{
+        "typ": "guzek",
+        "ilość": "1",
         "narząd": "płuco",
-    "strona" : "prawa"
-        "lokalizacja": "wnęka",
-        "rozmiar": "68x54",
-        "zwapnienia": "",
-        "cecha": "policykliczne zarysy"
+        "strona": "prawa",
+        "lokalizacja": "górny płat",
+        "segment": "1",
+        "kształt": "brak",
+        "rozmiar": "7x6",
+        "zwapnienia": "obecne"
         },
     "2":{
-        "typ": "powiększony węzeł chłonny",
+        "typ": "guzek",
+        "ilość": "1",
         "narząd": "płuco",
         "strona": "prawa",
-        "lokalizacja": "wnęka",
-        "rozmiar": "18x11",
-        "cecha": "podostrogowy"
+        "lokalizacja": "górny płat",
+        "segment": "1",
+        "kształt": "brak",
+        "rozmiar": "7x5",
+        "zwapnienia": "obecne"
         },
     "3":{
-        "typ": "powiększony węzeł chłonny",
+        "typ": "guzek",
+        "ilość": "1",
         "narząd": "płuco",
-        "strona": "prawa",
-        "lokalizacja": "wnęka",
-        "rozmiar": "13x9",
-        "cecha": "podostrogowy"
+        "strona": "lewa",
+        "lokalizacja": "górny płat",
+        "segment": "1",
+        "kształt": "brak",
+        "rozmiar": "4x3"
+        },
+    "4":{
+        "typ": "zmiany bliznowate",
+        "ilość": "1",
+        "narząd": "płuco",
+        "strona": "obie",
+        "lokalizacja": "górny płat",
+        "segment": "1"
         }
     }
 }
