@@ -49,7 +49,7 @@ def func1(api_key):
                                 step=8, value=64)
             if st.form_submit_button('Wyekstrahuj informacje'):
                 completion_kwargs = {
-                    "opis_badania3": (opis_badania,),
+                    "opis_badania2": (opis_badania,),
                     "engine": engine,
                     "temperature": temp,
                     "max_tokens": max_len,
@@ -58,7 +58,7 @@ def func1(api_key):
                 st.write('**Wyekstrahowane informacje**')
                 st.write(f"""---""")
                 with st.spinner(text='In progress'):
-                    report_text = process_prompt(completion_kwargs, "opis_badania3")
+                    report_text = process_prompt(completion_kwargs, "opis_badania2")
                     # report_text = report_text.replace('\n', '  \n')
                     import json
                     print('TU PATRZ: ',report_text, '\n')
